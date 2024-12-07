@@ -1,4 +1,3 @@
-import 'package:diparture/model/versesmodel.dart';
 import 'package:flutter/material.dart';
 
 class DataController with ChangeNotifier {
@@ -7,23 +6,8 @@ class DataController with ChangeNotifier {
   bool isFavorite = false;
   int currentIndex = 0;
 
-  void onChangeLanguage() {
-    isHindi = !isHindi;
-    notifyListeners();
-  }
-
-  void addFavourite({required VerseModel data}) {
-    allFavorite.add(data);
-    notifyListeners();
-  }
-
-  void deleteData({required int index}) {
-    allFavorite.removeAt(index);
-    notifyListeners();
-  }
-
-  void changeIndex(int index) {
-    currentIndex = index;
+  void onChangeLanguage(bool value) {
+    isHindi = value;
     notifyListeners();
   }
 
